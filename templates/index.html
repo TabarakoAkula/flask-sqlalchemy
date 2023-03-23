@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center">Works log</h1>
+{% for i in lst %}
+<h2>Action # {{ i[0] }}</h2>
+<table class="table">
+  <thead>
+    <tr class="table-active">
+      <th scope="col">Title of activity</th>
+      <th scope="col">Team leader</th>
+      <th scope="col">Duration</th>
+      <th scope="col">List of collaborators</th>
+      <th scope="col">If finished</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="table-primary" scope="row">{{ i[1] }}</th>
+      <td class="table-primary">{{ i[2] }}</td>
+      <td class="table-primary">{{ i[3] }}</td>
+      <td class="table-primary">{{ i[4] }}</td>
+      <td class="table-danger">{{ 'ㅤㅤIs finished' if i[5] else 'Is not finished' }}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+{% endfor %}
+{% endblock %}
